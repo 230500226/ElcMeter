@@ -5,37 +5,38 @@
 #include "User.h"
 
 int main() {
-    User users[MAX_USERS];
-    int num_users = 1;
+    User users[MAX_USERS]; // Array to store user data
+    int num_users = 1; // Variable to store the number of users (initialized to 1)
 
-    strcpy(users[0].username, "admin");
-    strcpy(users[0].password, "admin");
-    users[0].electricity_usage_per_day = 15;
-    users[0].electricity_units = 200;
+    // Initializing the first user
+    strcpy(users[0].username, "admin"); // Setting the username
+    strcpy(users[0].password, "admin"); // Setting the password
+    users[0].electricity_usage_per_day = 15; // Setting the electricity usage per day
+    users[0].electricity_units = 200; // Setting the electricity units
 
-    system("cls");
-    
+    system("cls"); // Clearing the screen
+
     int choice;
     do {
-        printf("Welcom to your electricity meter app\n");
-        printf("\n1. Login\n2. Create account\n3. Exit\nEnter your choice: ");
-        if (scanf("%d", &choice) != 1) {
-            handleInvalidInput(3);
-            continue;
+        printf("Welcome to your electricity meter app\n"); // Displaying the menu options
+        printf("\n1. Login\n2. Create account\n3. Exit\nPlease enter your choice: ");
+        if (scanf("%d", &choice) != 1) { // Checking if the input is valid
+            handleInvalidInput(3); // Handling invalid input
+            continue; // Skipping the rest of the loop and starting from the beginning
         }
         switch (choice) {
             case 1:
-                login(users, num_users);
+                login(users, num_users); // Calling the login function
                 break;
             case 2:
-                create_account(users, &num_users);
+                create_account(users, &num_users); // Calling the create_account function
                 break;
             case 3:
-                break;
+                break; // Exiting the loop and ending the program
             default:
-                handleInvalidInput(3);
+                handleInvalidInput(3); // Handling invalid input
         }
-    } while (choice != 3);
+    } while (choice != 3); // Continuing the loop until the user chooses to exit
 
-    return 0;
+    return 0; // Exiting the program
 }
