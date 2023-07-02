@@ -29,9 +29,9 @@ int main() {
     do {
         printf("Welcome to your electricity meter app\n"); // Displaying the menu options
         printf("\n1. Login\n2. Create account\n3. Exit\nPlease enter your choice: ");
-        if (scanf("%d", &choice) != 1) { // Checking if the input is valid
+        if (scanf("%d", &choice) != 1) { // Checking if the input is valid, must be a number
             handleInvalidInput(3); // Handling invalid input
-            continue; // Skipping the rest of the loop and starting from the beginning
+            continue; // Skipping the rest of the loop and starting from the beginning of do
         }
         switch (choice) {
             case 1:
@@ -43,7 +43,7 @@ int main() {
             case 3:
                 break; // Exiting the loop and ending the program
             default:
-                handleInvalidInput(3); // Handling invalid input
+                handleInvalidInput(3); // Again handling invalid input if necessary
         }
     } while (choice != 3); // Continuing the loop until the user chooses to exit
 

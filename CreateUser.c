@@ -14,8 +14,8 @@
 /********** FUNCTION IMPLEMENTATION **********/
 
 // Function to check if a username is unique among existing users
-int isUsernameUnique(User *users, int numUsers, char *username) {
-    for (int i = 0; i < numUsers; i++) {
+int isUsernameUnique(User *users, int numUsers, char *username) {   
+    for (int i = 0; i < numUsers; i++) { // loops through all the users to find a match
         if (strcmp(users[i].username, username) == 0) {
             return 0; // Not unique
         }
@@ -26,6 +26,7 @@ int isUsernameUnique(User *users, int numUsers, char *username) {
 void createAccount(User *users, int *numUsers) {
     system("cls");
 
+    //Check if the maximum number of users is reached
     if (*numUsers >= MAX_USERS) {
         printf("Sorry, the maximum number of users has been reached.\n");
         return;
@@ -46,10 +47,10 @@ void createAccount(User *users, int *numUsers) {
     // Prompt the user to enter the Electricity usage per month
     while (1) {
         printf("Enter Electricity usage per month (in Kw): ");
-        if (scanf("%f", &users[*numUsers].electricityUsagePerMonth) != 1) {
+        if (scanf("%f", &users[*numUsers].electricityUsagePerMonth) != 1) { // Input must be a number (float)
             handleInvalidInput(60000);
             continue;
-        }
+        } // Checks if Electricity usage per month must be between 0 and 60000
         if (users[*numUsers].electricityUsagePerMonth < 0 || users[*numUsers].electricityUsagePerMonth > 60000) {
             printf("Invalid value. Electricity usage per month must be between 0 and 60000.\n");
             continue;
@@ -69,6 +70,7 @@ void createAccount(User *users, int *numUsers) {
 
     if (choice == 'y' || choice == 'Y') {
         (*numUsers)++; // Increment the number of users
+                        // While the userdata has been pushed to the struct it will be overwrittien and not scanned for, unless the numUsers is updated
         printf("Account created successfully.\n"); // Success message
     } else {
         printf("Account creation cancelled.\n"); // Cancelled message

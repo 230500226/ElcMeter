@@ -1,7 +1,7 @@
 #ifndef User_H
 #define User_H
 
-typedef struct {
+typedef struct { // User struct to store the user data
     char username[20];
     char password[20];
     float electricityUsagePerMonth;
