@@ -66,12 +66,12 @@ void topUp(User *user) {
 
     if (input[0] == 'R' || input[0] == 'r') {
         // Calculate units based on the amount in rands
-        float rands = atof(input + 1); // Ascii to float for calculations and remove the R
+        float rands = atof(input + 1); // Ascii to float for calculations and removes the R
         if (rands < 0) {
             printf("Invalid value. You cannot top up a negative value.\n");
             return;
         }
-        units = rands / costPerUnit; // Calculate units
+        units = rands / costPerUnit; // Calculates units
     } else {
         // Convert input to units (assuming it's a valid number)
         units = atoi(input);

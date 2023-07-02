@@ -60,9 +60,9 @@ void createAccount(User *users, int *numUsers) {
     
     if (choice == 'y' || choice == 'Y') {
         (*numUsers)++; // Increment the number of users
-        printf("Account created successfully.\n");
+        printf("Account created successfully.\n"); // Success message
     } else {
-        printf("Account creation cancelled.\n");
+        printf("Account creation cancelled.\n"); // Cancelled message
     }
     
     system("cls"); 

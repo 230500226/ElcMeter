@@ -13,7 +13,7 @@ void handleInvalidInput(int options) {
     // Clear the input buffer to remove any remaining characters
     int c;
     while ((c = getchar()) != '\n' && c != EOF); 
-    // This effectively restarts the program while preserving previous data
+    // This effectively restarts the input part of the program while preserving previous data
 }
 
 //function to get the Password
