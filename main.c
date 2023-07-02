@@ -6,13 +6,13 @@
 
 int main() {
     User users[MAX_USERS]; // Array to store user data
-    int num_users = 1; // Variable to store the number of users (initialized to 1)
+    int numUsers = 1; // Variable to store the number of users (initialized to 1)
 
     // Initializing the first user
     strcpy(users[0].username, "admin"); // Setting the username
     strcpy(users[0].password, "admin"); // Setting the password
-    users[0].electricity_usage_per_day = 15; // Setting the electricity usage per day
-    users[0].electricity_units = 200; // Setting the electricity units
+    users[0].electricityUsagePerMonth = 15; // Setting the Electricity usage per month
+    users[0].electricityUnits = 200; // Setting the electricity units
 
     system("cls"); // Clearing the screen
 
@@ -26,10 +26,10 @@ int main() {
         }
         switch (choice) {
             case 1:
-                login(users, num_users); // Calling the login function
+                login(users, numUsers); // Calling the login function
                 break;
             case 2:
-                create_account(users, &num_users); // Calling the create_account function
+                createAccount(users, &numUsers); // Calling the createAccount function
                 break;
             case 3:
                 break; // Exiting the loop and ending the program

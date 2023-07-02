@@ -4,13 +4,13 @@
 typedef struct {
     char username[20];
     char password[20];
-    float electricity_usage_per_day;
-    int electricity_units;
+    float electricityUsagePerMonth;
+    int electricityUnits;
 } User;
 
 #define MAX_USERS 100
 
-void create_account(User *users, int *num_users);
-void login(User *users, int num_users);
+void createAccount(User *users, int *numUsers);
+void login(User *users, int numUsers);
 
 #endif
