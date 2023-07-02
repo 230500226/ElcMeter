@@ -1,8 +1,17 @@
+/***************** AUTHOR INFO ******************/
+// Name: Shahied Rustin
+// Student No.: 230500226
+// Course Title: Software Design 1 (SDN150S)
+// Date: 02/07/2023
+
+/************* HEADER FILES ***************/
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 #include "Authentication.h"
 #include "User.h"
+
+/********** FUNCTION IMPLEMENTATION **********/
 
 // Function to check if a username is unique among existing users
 int isUsernameUnique(User *users, int numUsers, char *username) {
@@ -15,25 +24,25 @@ int isUsernameUnique(User *users, int numUsers, char *username) {
 }
 
 void createAccount(User *users, int *numUsers) {
-    system("cls"); 
-    
+    system("cls");
+
     if (*numUsers >= MAX_USERS) {
         printf("Sorry, the maximum number of users has been reached.\n");
         return;
     }
-    
+
     // Prompt the user to enter a username
     printf("Please enter a username: ");
     scanf("%s", users[*numUsers].username);
-    
+
     // Check if the username is unique
     if (!isUsernameUnique(users, *numUsers, users[*numUsers].username)) {
         printf("Sorry, that username is already taken.\n");
         return;
     }
-    
+
     getPassword(users[*numUsers].password); // Prompt the user to enter a password
-    
+
     // Prompt the user to enter the Electricity usage per month
     while (1) {
         printf("Enter Electricity usage per month (in Kw): ");
@@ -47,9 +56,9 @@ void createAccount(User *users, int *numUsers) {
         }
         break;
     }
-    
+
     users[*numUsers].electricityUnits = 100; // Set the initial electricity units to 100
-    
+
     // Confirm the user's information
     printf("\nPlease confirm the following information:\n");
     printf("Username: %s\n", users[*numUsers].username);
@@ -57,13 +66,13 @@ void createAccount(User *users, int *numUsers) {
     printf("\nIs this information correct? (y/n): ");
     char choice;
     scanf(" %c", &choice);
-    
+
     if (choice == 'y' || choice == 'Y') {
         (*numUsers)++; // Increment the number of users
         printf("Account created successfully.\n"); // Success message
     } else {
         printf("Account creation cancelled.\n"); // Cancelled message
     }
-    
-    system("cls"); 
+
+    system("cls");
 }

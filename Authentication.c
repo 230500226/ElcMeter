@@ -1,10 +1,18 @@
-#include <stdio.h>
+/************* AUTHOR INFO **************/
+// Name: Shahied Rustin
+// Student No.: 230500226
+// Course Title: Software Design 1 (SDN150S)
+// Date: 02/07/2023
+
+/************* HEADER FILES ***************/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
 #include <conio.h>
 #include "Authentication.h"
+
+/********** FUNCTION IMPLEMENTATION **********/
 
 // Function to handle invalid user input
 void handleInvalidInput(int options) {
@@ -16,7 +24,7 @@ void handleInvalidInput(int options) {
     // This effectively restarts the input part of the program while preserving previous data
 }
 
-//function to get the Password
+// Function to get the Password
 void getPassword(char *password) {
     char ch; // Variable to store the input character
     int index = 0;

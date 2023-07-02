@@ -1,8 +1,17 @@
+/************* AUTHOR INFO **************/
+// Name: Shahied Rustin
+// Student No.: 230500226
+// Course Title: Software Design 1 (SDN150S)
+// Date: 02/07/2023
+
+/************* HEADER FILES ***************/
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 #include "Authentication.h"
 #include "User.h"
+
+/**************** MAIN FUNCTION *******************/
 
 int main() {
     User users[MAX_USERS]; // Array to store user data

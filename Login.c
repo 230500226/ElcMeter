@@ -1,8 +1,17 @@
+/************* AUTHOR INFO **************/
+// Name: Shahied Rustin
+// Student No.: 230500226
+// Course Title: Software Design 1 (SDN150S)
+// Date: 02/07/2023
+
+/************* HEADER FILES ***************/
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 #include "User.h"
 #include "Authentication.h"
+
+/********** FUNCTION IMPLEMENTATION **********/
 
 // Function prototypes
 void topUp(User *user);
